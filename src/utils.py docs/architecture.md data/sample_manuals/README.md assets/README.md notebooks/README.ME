@@ -1,0 +1,37 @@
+# RAG Industrial Chatbot — Demo
+
+This is a lightweight Retrieval-Augmented Generation (RAG) demonstration using:
+- LangChain
+- FAISS vector search
+- OpenAI embeddings
+- Gradio UI
+
+It loads PDF manuals, builds a vector index, retrieves relevant context, and answers questions using a conversational LLM pipeline.
+
+## Features
+- PDF ingestion
+- FAISS vector store
+- ConversationalRetrievalChain
+- Gradio web interface
+- Ready for industrial or manufacturing documentation
+
+## Folder Structure
+rag-industrial-chatbot-demo/
+│── src/
+│     ├── utils.py
+│     ├── create_vectorstore.py
+│     └── app_gradio.py
+│── docs/
+│     └── architecture.md
+│── data/sample_manuals/
+│── assets/
+│── notebooks/
+│── requirements.txt
+│── .gitignore
+│── README.md
+
+## Quickstart
+pip install -r requirements.txt
+export OPENAI_API_KEY="your-key"
+python src/create_vectorstore.py --data_dir data/sample_manuals --index_path ./faiss_index
+python src/app_gradio.py --index_path ./faiss_index/faiss_index
